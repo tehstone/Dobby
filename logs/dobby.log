@@ -1,0 +1,1370 @@
+[21/06/2019 10:45] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 10:45] INFO __main__ _print 235: Starting up...
+[21/06/2019 10:45] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 10:45] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 10:45] ERROR errors on_command_error 573: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 784, in configure
+    await _configure(ctx, configlist)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 869, in _configure
+    ctx = await _configure_regions(ctx)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 1134, in _configure_regions
+    region_dict[region_names_list[i]] = {'location': region_locations_list[i], 'role': dobby.utils.sanitize_channel_name(region_names_list[i]), 'raidrole': dobby.utils.sanitize_channel_name(region_names_list[i] + "-raids")}
+NameError: name 'dobby' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1163, in invoke
+    await super().invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'dobby' is not defined
+[21/06/2019 10:51] ERROR errors on_command_error 573: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 1489, in sort
+    if (temp_role in ctx.author.roles) and (harmony not in ctx.author.roles):
+NameError: name 'harmony' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'harmony' is not defined
+[21/06/2019 10:51] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 10:52] INFO __main__ _print 235: Starting up...
+[21/06/2019 10:52] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 10:52] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 11:10] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 11:10] INFO __main__ _print 235: Starting up...
+[21/06/2019 11:10] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 11:10] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 11:10] ERROR errors on_command_error 573: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 916, in sort
+    return await _check_sessions_and_invoke(ctx, _configure_sort)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 907, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 947, in _configure_sort
+    if result['status'] == 'success':
+TypeError: 'coroutine' object is not subscriptable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'coroutine' object is not subscriptable
+[21/06/2019 11:11] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 11:11] INFO __main__ _print 235: Starting up...
+[21/06/2019 11:11] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 11:11] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 11:11] ERROR errors on_command_error 573: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 916, in sort
+    return await _check_sessions_and_invoke(ctx, _configure_sort)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 907, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 947, in _configure_sort
+    if result['status'] == 'success':
+TypeError: 'NoneType' object is not subscriptable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'NoneType' object is not subscriptable
+[21/06/2019 11:12] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 11:12] INFO __main__ _print 235: Starting up...
+[21/06/2019 11:12] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 11:12] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 11:21] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 11:22] INFO __main__ _print 235: Starting up...
+[21/06/2019 11:22] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 11:22] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 11:24] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 11:24] INFO __main__ _print 235: Starting up...
+[21/06/2019 11:24] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 11:24] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 12:37] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 12:37] INFO __main__ _print 235: Starting up...
+[21/06/2019 12:37] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 12:37] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 12:38] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 12:38] INFO __main__ _print 235: Starting up...
+[21/06/2019 12:38] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 12:38] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 12:46] INFO __main__ _print 235: Error occured while trying to save!
+[21/06/2019 12:46] INFO __main__ _print 235: Can't pickle local object '_wait.<locals>._on_completion'
+[21/06/2019 12:46] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 12:46] INFO __main__ _print 235: Starting up...
+[21/06/2019 12:46] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 12:46] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 12:49] ERROR errors on_command_error 113: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 917, in sort
+    return await _check_sessions_and_invoke(ctx, configuration._configure_sort)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 907, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx)
+TypeError: _configure_sort() missing 1 required positional argument: 'Dobby'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: _configure_sort() missing 1 required positional argument: 'Dobby'
+[21/06/2019 12:49] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 12:49] INFO __main__ _print 235: Starting up...
+[21/06/2019 12:49] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 12:49] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 12:49] ERROR errors on_command_error 113: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 917, in sort
+    return await _check_sessions_and_invoke(ctx, configuration._configure_sort)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 907, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 8, in _configure_sort
+    config_dict_temp = getattr(ctx, 'config_dict_temp',copy.deepcopy(guild_dict[guild.id]['configure_dict']))
+NameError: name 'copy' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'copy' is not defined
+[21/06/2019 12:49] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 12:49] INFO __main__ _print 235: Starting up...
+[21/06/2019 12:49] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 12:49] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 12:49] ERROR errors on_command_error 113: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 917, in sort
+    return await _check_sessions_and_invoke(ctx, configuration._configure_sort)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 907, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 9, in _configure_sort
+    config_dict_temp = getattr(ctx, 'config_dict_temp',copy.deepcopy(guild_dict[guild.id]['configure_dict']))
+NameError: name 'guild_dict' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'guild_dict' is not defined
+[21/06/2019 12:50] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 12:50] INFO __main__ _print 235: Starting up...
+[21/06/2019 12:50] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 12:50] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 12:50] ERROR errors on_command_error 113: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 917, in sort
+    return await _check_sessions_and_invoke(ctx, configuration._configure_sort)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 907, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 11, in _configure_sort
+    await owner.send(embed=discord.Embed(colour=discord.Colour.lighter_grey(), description=_("Sorting allows users to join their preferred House using the **!sort** command. If you have a bot that handles this already, you may want to disable this feature.\n\nIf you are to use this feature, ensure existing houses are as follows: hufflepuff, slyitherin, ravenclaw, gryffindor. These must be all lowercase letters. If they don't exist yet, I'll make some for you instead.\n\nRespond here with: **N** to disable, **Y** to enable:")).set_author(name=_('Sorting'), icon_url=Dobby.user.avatar_url))
+NameError: name '_' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name '_' is not defined
+[21/06/2019 12:58] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 12:58] INFO __main__ _print 235: Starting up...
+[21/06/2019 12:58] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 12:58] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 12:58] ERROR errors on_command_error 113: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 917, in sort
+    return await _check_sessions_and_invoke(ctx, configuration._configure_sort)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 907, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 18, in _configure_sort
+    if role.name.lower() in config['house_dict'] and role.name not in guild_roles:
+NameError: name 'config' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'config' is not defined
+[21/06/2019 12:59] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 12:59] INFO __main__ _print 235: Starting up...
+[21/06/2019 12:59] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 12:59] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:00] ERROR errors on_command_error 113: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 922, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 900, in _check_sessions_and_invoke
+    if not guild_dict[guild.id]['configure_dict']['settings']['done']:
+AttributeError: 'NoneType' object has no attribute 'id'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'id'
+[21/06/2019 13:01] ERROR errors on_command_error 113: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 922, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 907, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 68, in _configure_welcome
+    config_dict_temp = getattr(ctx, 'config_dict_temp',copy.deepcopy(guild_dict[guild.id]['configure_dict']))
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 215, in _deepcopy_list
+    append(deepcopy(a, memo))
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 220, in _deepcopy_tuple
+    y = [deepcopy(a, memo) for a in x]
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 220, in <listcomp>
+    y = [deepcopy(a, memo) for a in x]
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 220, in _deepcopy_tuple
+    y = [deepcopy(a, memo) for a in x]
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 220, in <listcomp>
+    y = [deepcopy(a, memo) for a in x]
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 220, in _deepcopy_tuple
+    y = [deepcopy(a, memo) for a in x]
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 220, in <listcomp>
+    y = [deepcopy(a, memo) for a in x]
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 220, in _deepcopy_tuple
+    y = [deepcopy(a, memo) for a in x]
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 220, in <listcomp>
+    y = [deepcopy(a, memo) for a in x]
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 180, in deepcopy
+    y = _reconstruct(x, memo, *rv)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 280, in _reconstruct
+    state = deepcopy(state, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 150, in deepcopy
+    y = copier(x, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 240, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\copy.py", line 169, in deepcopy
+    rv = reductor(4)
+TypeError: can't pickle _thread.lock objects
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: can't pickle _thread.lock objects
+[21/06/2019 13:04] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:04] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:04] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 13:04] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:06] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:06] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:06] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 13:06] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:06] ERROR errors on_command_error 113: SortChannelCheckFail
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 721, in invoke
+    await self.prepare(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 678, in prepare
+    await self._verify_checks(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 626, in _verify_checks
+    if not await self.can_run(ctx):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 935, in can_run
+    return await discord.utils.async_all(predicate(ctx) for predicate in predicates)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\utils.py", line 318, in async_all
+    for elem in gen:
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 935, in <genexpr>
+    return await discord.utils.async_all(predicate(ctx) for predicate in predicates)
+  File "D:\grepos\Dobby\dobby\checks.py", line 111, in predicate
+    raise errors.SortChannelCheckFail()
+dobby.errors.SortChannelCheckFail
+[21/06/2019 13:11] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:11] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:11] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 13:11] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:13] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:13] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:13] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 13:13] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:14] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:14] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:14] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 13:14] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:27] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:27] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:27] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:27] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 13:27] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:28] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 922, in assign
+    return await _check_sessions_and_invoke(ctx, configuration._configure_assign)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 907, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 74, in _configure_assign
+    config_dict_temp['profession']['enabled'] = True
+KeyError: 'profession'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: 'profession'
+[21/06/2019 13:29] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:29] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:29] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 13:29] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:30] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 923, in assign
+    return await _check_sessions_and_invoke(ctx, configuration._configure_assign)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 908, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 74, in _configure_assign
+    config_dict_temp['profession']['enabled'] = True
+KeyError: 'profession'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: 'profession'
+[21/06/2019 13:33] INFO __main__ _load_data 68: Serverdict Not Found - Looking for Backup
+[21/06/2019 13:33] INFO __main__ _load_data 74: Serverdict Backup Not Found - Creating New Serverdict
+[21/06/2019 13:33] INFO __main__ _load_data 78: Serverdict Created
+[21/06/2019 13:33] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:33] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 13:33] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:34] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "D:\grepos\Dobby\dobby\__main__.py", line 862, in _configure
+    ctx = await configuration._configure_sort(ctx)
+TypeError: _configure_sort() missing 1 required positional argument: 'Dobby'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 923, in assign
+    return await _check_sessions_and_invoke(ctx, configuration._configure_assign)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 902, in _check_sessions_and_invoke
+    await _configure(ctx, "all")
+  File "D:\grepos\Dobby\dobby\__main__.py", line 883, in _configure
+    ctx.config_dict_temp['settings']['done'] = True
+AttributeError: 'Context' object has no attribute 'config_dict_temp'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Context' object has no attribute 'config_dict_temp'
+[21/06/2019 13:38] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:38] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:38] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 13:38] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:39] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 785, in configure
+    await _configure(ctx, configlist)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 874, in _configure
+    ctx = await configuration._configure_regions(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 279, in _configure_regions
+    region_names_list = re.split(r'\s*,\s*', response)
+NameError: name 're' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1163, in invoke
+    await super().invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 're' is not defined
+[21/06/2019 13:45] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 932, in welcome
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 165, in _configure_welcome
+    if errors:
+NameError: name 'do_template' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'do_template' is not defined
+[21/06/2019 13:47] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:47] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:47] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 13:47] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:48] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 169, in _configure_welcome
+    embed = discord.Embed(colour=guild.me.colour, description=welcomemessage[1:-1].format(user=owner.mention))
+KeyError: '@member'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: '@member'
+[21/06/2019 13:51] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 169, in _configure_welcome
+    embed = discord.Embed(colour=guild.me.colour, description=welcomemessage[1:-1].format(user=owner.mention))
+KeyError: 'userr'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: 'userr'
+[21/06/2019 13:52] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 169, in _configure_welcome
+    embed = discord.Embed(colour=guild.me.colour, description=welcomemessage[1:-1].format(user=owner.mention))
+KeyError: '#538881204565311498'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: '#538881204565311498'
+[21/06/2019 13:53] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:53] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:53] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 13:53] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:53] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 169, in _configure_welcome
+    embed = discord.Embed(colour=guild.me.colour, description=welcomemessage[1:-1].format(user=owner.mention))
+KeyError: '#538881204565311498'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: '#538881204565311498'
+[21/06/2019 13:54] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:54] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:54] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 13:54] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:54] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 170, in _configure_welcome
+    embed = discord.Embed(colour=guild.me.colour, description=welcomemessage[1:-1].format(user=owner.mention))
+KeyError: '#538881204565311498'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: '#538881204565311498'
+[21/06/2019 13:55] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 13:55] INFO __main__ _print 235: Starting up...
+[21/06/2019 13:55] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 13:55] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 13:57] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 170, in _configure_welcome
+    embed = discord.Embed(colour=guild.me.colour, description=welcomemessage[1:-1].format(user=owner.mention))
+KeyError: '#538881204565311498'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: '#538881204565311498'
+[21/06/2019 14:01] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:01] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:01] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:01] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:01] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 170, in _configure_welcome
+    embed = discord.Embed(colour=guild.me.colour, description=welcomemessage[1:-1].format(user=owner.mention))
+KeyError: '#538881204565311498'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: '#538881204565311498'
+[21/06/2019 14:03] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:03] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:03] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:03] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:04] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 170, in _configure_welcome
+    embed = discord.Embed(colour=guild.me.colour, description=welcomemessage[1:-1].format(user=owner.mention))
+KeyError: '#538881204565311498'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: '#538881204565311498'
+[21/06/2019 14:05] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:06] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:06] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:06] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:06] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 170, in _configure_welcome
+    embed = discord.Embed(colour=guild.me.colour, description=welcomemessage[1:-1].format(user=owner.mention))
+KeyError: '#the-great-hall'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: '#the-great-hall'
+[21/06/2019 14:07] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:07] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:07] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:07] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:07] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 170, in _configure_welcome
+    embed = discord.Embed(colour=guild.me.colour, description=welcomemessage[1:-1].format(user=owner.mention))
+KeyError: '#521087630885126189\n'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: '#521087630885126189\n'
+[21/06/2019 14:07] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 183, in _configure_welcome
+    res, reactuser = await ask(question, owner, owner.id)
+NameError: name 'ask' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'ask' is not defined
+[21/06/2019 14:08] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:08] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:08] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:08] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:09] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 183, in _configure_welcome
+    res, reactuser = await utils.ask(question, owner, owner.id)
+  File "D:\grepos\Dobby\dobby\utils.py", line 169, in ask
+    await message.add_reaction(r)
+AttributeError: 'Member' object has no attribute 'add_reaction'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Member' object has no attribute 'add_reaction'
+[21/06/2019 14:12] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:12] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:12] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:12] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:14] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "D:\grepos\Dobby\dobby\utils.py", line 171, in ask
+    reaction, user = await bot.wait_for('reaction_add', check=check, timeout=timeout)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\asyncio\tasks.py", line 362, in wait_for
+    raise futures.TimeoutError()
+concurrent.futures._base.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 183, in _configure_welcome
+    res, reactuser = await utils.ask(Dobby, question, owner)
+  File "D:\grepos\Dobby\dobby\utils.py", line 174, in ask
+    await message.clear_reactions()
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\message.py", line 895, in clear_reactions
+    await self._state.http.clear_reactions(self.channel.id, self.id)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\http.py", line 218, in request
+    raise Forbidden(r, data)
+discord.errors.Forbidden: 403 FORBIDDEN (error code: 50003): Cannot execute action on a DM channel
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Forbidden: 403 FORBIDDEN (error code: 50003): Cannot execute action on a DM channel
+[21/06/2019 14:14] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:14] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:14] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:14] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:16] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "D:\grepos\Dobby\dobby\utils.py", line 171, in ask
+    reaction, user = await bot.wait_for('reaction_add', check=check, timeout=timeout)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\asyncio\tasks.py", line 362, in wait_for
+    raise futures.TimeoutError()
+concurrent.futures._base.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 183, in _configure_welcome
+    res, reactuser = await utils.ask(Dobby, question, owner)
+  File "D:\grepos\Dobby\dobby\utils.py", line 176, in ask
+    await message.clear_reactions()
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\message.py", line 895, in clear_reactions
+    await self._state.http.clear_reactions(self.channel.id, self.id)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\http.py", line 218, in request
+    raise Forbidden(r, data)
+discord.errors.Forbidden: 403 FORBIDDEN (error code: 50003): Cannot execute action on a DM channel
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Forbidden: 403 FORBIDDEN (error code: 50003): Cannot execute action on a DM channel
+[21/06/2019 14:17] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:17] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:17] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:17] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:18] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "D:\grepos\Dobby\dobby\utils.py", line 172, in ask
+    reaction, user = await bot.wait_for('reaction_add', check=check, timeout=timeout)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\asyncio\tasks.py", line 362, in wait_for
+    raise futures.TimeoutError()
+concurrent.futures._base.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 183, in _configure_welcome
+    res, reactuser = await utils.ask(Dobby, question, owner)
+  File "D:\grepos\Dobby\dobby\utils.py", line 175, in ask
+    await message.clear_reactions()
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\message.py", line 895, in clear_reactions
+    await self._state.http.clear_reactions(self.channel.id, self.id)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\http.py", line 218, in request
+    raise Forbidden(r, data)
+discord.errors.Forbidden: 403 FORBIDDEN (error code: 50003): Cannot execute action on a DM channel
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: Forbidden: 403 FORBIDDEN (error code: 50003): Cannot execute action on a DM channel
+[21/06/2019 14:31] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:31] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:31] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:31] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:31] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 916, in _check_sessions_and_invoke
+    del guild_dict[guild.id]['configure_dict']['settings']['config_sessions'][owner.id]
+KeyError: 371387628093833216
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: KeyError: 371387628093833216
+[21/06/2019 14:32] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:32] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:32] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:32] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:33] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:33] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:33] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:33] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:34] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 197, in _configure_welcome
+    await owner.send(embed=discord.Embed(colour=discord.Colour.green(), description="Welcome Message set to:\n\n{}").format(config_dict_temp['welcome']['welcomemsg']))
+AttributeError: 'Embed' object has no attribute 'format'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Embed' object has no attribute 'format'
+[21/06/2019 14:34] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:34] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:34] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:34] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:35] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 199, in _configure_welcome
+    await owner.send(embed=discord.Embed(colour=discord.Colour.green(), description="Welcome Message set to:\n\n{}").format(config_dict_temp['welcome']['welcomemsg']))
+AttributeError: 'Embed' object has no attribute 'format'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Embed' object has no attribute 'format'
+[21/06/2019 14:36] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:36] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:37] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:37] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:37] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 931, in welcome
+    return await _check_sessions_and_invoke(ctx, configuration._configure_welcome)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 912, in _check_sessions_and_invoke
+    ctx = await func_ref(ctx, Dobby)
+  File "D:\grepos\Dobby\dobby\configuration.py", line 197, in _configure_welcome
+    await owner.send(embed=discord.Embed(colour=discord.Colour.green(), description="Welcome Message set to:\n\n{}").format(config_dict_temp['welcome']['welcomemsg']))
+AttributeError: 'Embed' object has no attribute 'format'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 1158, in invoke
+    await ctx.invoked_subcommand.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'Embed' object has no attribute 'format'
+[21/06/2019 14:38] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:38] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:38] INFO __main__ _print 235: 1 servers connected.
+23 members found.
+[21/06/2019 14:38] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:39] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 1178, in join
+    if join_dict.get('enabled', False):
+AttributeError: 'NoneType' object has no attribute 'get'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: AttributeError: 'NoneType' object has no attribute 'get'
+[21/06/2019 14:40] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:40] INFO __main__ _print 235: Starting up...
+[21/06/2019 14:40] INFO __main__ _print 235: 1 servers connected.
+24 members found.
+[21/06/2019 14:40] INFO __main__ maint_start 240: Maintenance Tasks Started
+[21/06/2019 14:43] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 169, in fortress
+    if not gym:
+NameError: name 'gym' is not defined
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: NameError: name 'gym' is not defined
+[21/06/2019 14:44] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:44] INFO __main__ _print 236: Starting up...
+[21/06/2019 14:44] INFO __main__ _print 236: 1 servers connected.
+24 members found.
+[21/06/2019 14:44] INFO __main__ maint_start 241: Maintenance Tasks Started
+[21/06/2019 14:46] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:46] INFO __main__ _print 236: Starting up...
+[21/06/2019 14:46] INFO __main__ _print 236: 1 servers connected.
+24 members found.
+[21/06/2019 14:46] INFO __main__ maint_start 241: Maintenance Tasks Started
+[21/06/2019 14:47] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:47] INFO __main__ _print 236: Starting up...
+[21/06/2019 14:47] INFO __main__ _print 236: 1 servers connected.
+24 members found.
+[21/06/2019 14:47] INFO __main__ maint_start 241: Maintenance Tasks Started
+[21/06/2019 14:47] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:47] INFO __main__ _print 236: Starting up...
+[21/06/2019 14:47] INFO __main__ _print 236: 1 servers connected.
+24 members found.
+[21/06/2019 14:47] INFO __main__ maint_start 241: Maintenance Tasks Started
+[21/06/2019 14:47] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 1029, in gryffindor
+    await sort(ctx, 'gryffindor')
+TypeError: 'Command' object is not callable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'Command' object is not callable
+[21/06/2019 14:47] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 1029, in gryffindor
+    await sort(ctx, 'gryffindor')
+TypeError: 'Command' object is not callable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'Command' object is not callable
+[21/06/2019 14:48] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 1029, in gryffindor
+    await sort(ctx, 'gryffindor')
+TypeError: 'Command' object is not callable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'Command' object is not callable
+[21/06/2019 14:48] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:48] INFO __main__ _print 236: Starting up...
+[21/06/2019 14:48] INFO __main__ _print 236: 1 servers connected.
+24 members found.
+[21/06/2019 14:48] INFO __main__ maint_start 241: Maintenance Tasks Started
+[21/06/2019 14:48] ERROR errors on_command_error 155: CommandInvokeError
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 79, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "D:\grepos\Dobby\dobby\__main__.py", line 1029, in gryffindor
+    await sort(ctx, 'gryffindor')
+TypeError: 'Command' object is not callable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\bot.py", line 863, in invoke
+    await ctx.command.invoke(ctx)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 728, in invoke
+    await injected(*ctx.args, **ctx.kwargs)
+  File "C:\Users\johnnys\AppData\Local\Programs\Python\Python36\lib\site-packages\discord\ext\commands\core.py", line 88, in wrapped
+    raise CommandInvokeError(exc) from exc
+discord.ext.commands.errors.CommandInvokeError: Command raised an exception: TypeError: 'Command' object is not callable
+[21/06/2019 14:50] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:50] INFO __main__ _print 236: Starting up...
+[21/06/2019 14:50] INFO __main__ _print 236: 1 servers connected.
+24 members found.
+[21/06/2019 14:50] INFO __main__ maint_start 241: Maintenance Tasks Started
+[21/06/2019 14:52] INFO __main__ _load_data 66: Serverdict Loaded Successfully
+[21/06/2019 14:52] INFO __main__ _print 236: Starting up...
+[21/06/2019 14:52] INFO __main__ _print 236: 1 servers connected.
+24 members found.
+[21/06/2019 14:52] INFO __main__ maint_start 241: Maintenance Tasks Started
+[21/06/2019 15:08] INFO __main__ <module> 1575: Keyboard interrupt detected. Quitting...
