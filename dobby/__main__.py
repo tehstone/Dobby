@@ -182,6 +182,29 @@ def get_fortresses(guild_id, regions=None):
     fortress = location_matching_cog.get_fortresses(guild_id, regions)
     return fortress
 
+@Dobby.command(name='greenhouse', aliases=['gh'])
+async def greenhouse(ctx, *, name):
+    '''Lookup directions to a Greenhouse'''
+    message = ctx.message
+    channel = ctx.channel
+    guild = ctx.guild
+    greenhouses = get_greenhouses(guild.id)
+    greenhouse = await location_match_prompt(channel, message.author.id, name, greenhouses)
+    if not greenhouse:
+        return await channel.send(embed=discord.Embed(colour=discord.Colour.red(), description=f"No greenhouse found with name '{name}'. Try again using the exact greenhouse name!"))
+    else:
+        greenhouse_embed = discord.Embed(title=_('Click here for directions to {0}!'.format(greenhouse.name)), url=greenhouse.maps_url, colour=guild.me.colour)
+        greenhouse_info = _("**Name:** {name}\n**Region:** {region}\n").format(name=greenhouse.name, region=greenhouse.region.title())
+        greenhouse_embed.add_field(name=_('**Fortress Information**'), value=greenhouse_info, inline=False)
+        return await channel.send(content="", embed=greenhouse_embed)
+
+def get_greenhouses(guild_id, regions=None):
+    location_matching_cog = Dobby.cogs.get('LocationMatching')
+    if not location_matching_cog:
+        return None
+    greenhouse = location_matching_cog.get_greenhouses(guild_id, regions)
+    return greenhouse
+
 async def location_match_prompt(channel, author_id, name, locations):
     # note: the following logic assumes json constraints -- no duplicates in source data
     location_matching_cog = Dobby.cogs.get('LocationMatching')
@@ -1284,7 +1307,7 @@ async def _loc_add(ctx, *, info):
     data["coordinates"] = f"{latitude},{longitude}"
     data["region"] = region.lower()
     data["guild"] = str(ctx.guild.id)
-    error_msg = LocationTable.create_location(name, data)
+    error_msg = LocationTable.create_location(name, data, type)
     if error_msg is None:
         success = await channel.send(embed=discord.Embed(colour=discord.Colour.green(), description=f"Successfully added {type}: {name}."))
         await message.add_reaction('✅')

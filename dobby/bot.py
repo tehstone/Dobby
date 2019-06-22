@@ -13,9 +13,11 @@ class DobbyBot(commands.AutoShardedBot):
         if message.author.bot:
             return
         if message.content.startswith('!'):
-            message.content = message.content.lower()
             if message.content[1] == " ":
                 message.content = message.content[0] + message.content[2:]
+            content_array = message.content.split(' ')
+            content_array[0] = content_array[0].lower()
+            message.content = ' '.join(content_array)
         ctx = await self.get_context(message, cls=Context)
         if not ctx.command:
             return
