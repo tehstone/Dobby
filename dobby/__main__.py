@@ -258,9 +258,24 @@ async def _print(owner, message):
     print(message)
     logger.info(message)
 
+async def server_dict_save(Loop=True):
+    while (not Dobby.is_closed()):
+        guilddict_chtemp = copy.deepcopy(guild_dict)
+        logger.info('Scheduled Server Dict Save ------ BEGIN ------')
+        for guildid in guilddict_chtemp.keys():
+            try:
+                await _save(guildid)
+                logger.info(f'Server Dict successfully save for guild with id: {guildid}')
+            except Exception as err:
+                logger.info('Scheduled Server Dict Save - SAVING FAILED' + str(err))
+        logger.info('Scheduled Server Dict Save ------ END ------')
+        await asyncio.sleep(600)
+        continue
+
 async def maint_start():
     tasks = []
     try:
+        tasks.append(event_loop.create_task(server_dict_save()))
         logger.info('Maintenance Tasks Started')
     except KeyboardInterrupt:
         [task.cancel() for task in tasks]
