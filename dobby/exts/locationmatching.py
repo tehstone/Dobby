@@ -36,9 +36,8 @@ class Location:
 
 class Fortress(Location):
     __name__ = "Fortress"
-    def __init__(self, id, name, latitude, longitude, region, ex_eligible, note):
+    def __init__(self, id, name, latitude, longitude, region, note):
         super().__init__(id, name, latitude, longitude, region, note)
-        self.ex_eligible = ex_eligible
 
 class Inn(Location):
     __name__ = "Inn"
