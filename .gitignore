@@ -4,3 +4,9 @@ data/dobby.db
 data/serverdict
 data/serverdict_backup
 .gitattributes
+*.pyc
+logs/dobby.log
+data/dobby.db-wal
+data/dobby.db-shm
+logs/dobby.log
+logs/dobby.log

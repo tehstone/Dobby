@@ -263,7 +263,7 @@ async def _configure_regions(ctx, Dobby):
     owner = ctx.message.author
     config_dict_temp = getattr(ctx, 'config_dict_temp',copy.deepcopy(guild_dict[guild.id]['configure_dict']))
     config_dict_temp.setdefault('regions', {})
-    await owner.send(embed=discord.Embed(colour=discord.Colour.lighter_grey(), description="I can keep track of multiple regions within your community. This can be useful for communities that span multiple cities or areas where users tend to only be interested in certain subsets of raids, research, etc. To start, I'll need the names of the regions you'd like to set up: `region-name, region-name, region-name`\n\nExample: `north-saffron, south-saffron, celadon`\n\nTo facilitate communication, I will be creating roles for each region name provided, so make sure the names are meaningful!\n\nIf you do not require regions, you may want to disable this functionality.\n\nRespond with: **N** to disable, or the **region-name** list to enable, each seperated with a comma and space:").set_author(name='Region Names', icon_url=Dobby.user.avatar_url))
+    await owner.send(embed=discord.Embed(colour=discord.Colour.lighter_grey(), description="I can keep track of multiple regions within your community. This can be useful for communities that span multiple cities. To start, I'll need the names of the regions you'd like to set up: `region-name, region-name, region-name`\n\nExample: `north-saffron, south-saffron, celadon`\n\nTo facilitate communication, I will be creating roles for each region name provided, so make sure the names are meaningful!\n\nIf you do not require regions, you may want to disable this functionality.\n\nRespond with: **N** to disable, or the **region-name** list to enable, each seperated with a comma and space:").set_author(name='Region Names', icon_url=Dobby.user.avatar_url))
     region_dict = {}
     while True:
         region_names = await Dobby.wait_for('message', check=(lambda message: (message.guild == None) and message.author == owner))
@@ -291,7 +291,7 @@ async def _configure_regions(ctx, Dobby):
             region_locations_list = re.split(r'\s*,\s*', response)
             if len(region_locations_list) == len(region_names_list):
                 for i in range(len(region_names_list)):
-                    region_dict[region_names_list[i]] = {'location': region_locations_list[i], 'role': utils.sanitize_channel_name(region_names_list[i]), 'raidrole': utils.sanitize_channel_name(region_names_list[i] + "-raids")}
+                    region_dict[region_names_list[i]] = {'location': region_locations_list[i], 'role': utils.sanitize_channel_name(region_names_list[i])}
                 break
             else:
                 await owner.send(embed=discord.Embed(colour=discord.Colour.orange(), description="The number of locations doesn't match the number of regions you gave me earlier!\n\nI'll show you the two lists to compare:\n\n{region_names_list}\n{region_locations_list}\n\nPlease double check that your locations match up with your provided region names and resend your response.".format(region_names_list=', '.join(region_names_list), region_locations_list=', '.join(region_locations_list))))
@@ -345,7 +345,6 @@ async def _configure_regions(ctx, Dobby):
                 continue
     # set up roles
     new_region_roles = set([r['role'] for r in region_dict.values()])
-    new_region_raid_roles = set([r['raidrole'] for r in region_dict.values()])
     existing_region_dict = config_dict_temp['regions'].get('info', None)
     if existing_region_dict:
         existing_region_roles = set([r['role'] for r in existing_region_dict.values()])
@@ -359,9 +358,6 @@ async def _configure_regions(ctx, Dobby):
                     await temp_role.delete(reason="Removed from region configuration")
                 except discord.errors.HTTPException:
                     pass
-        existing_region_roles = set([r.setdefault('raidrole', '') for r in existing_region_dict.values()])
-        obsolete_roles = existing_region_roles - new_region_raid_roles
-        new_region_raid_roles = new_region_raid_roles - existing_region_roles
         # remove obsolete roles
         for role in obsolete_roles:
             temp_role = discord.utils.get(guild.roles, name=role)
@@ -371,13 +367,6 @@ async def _configure_regions(ctx, Dobby):
                 except discord.errors.HTTPException:
                     pass
     for role in new_region_roles:
-        temp_role = discord.utils.get(guild.roles, name=role)
-        if not temp_role:
-            try:
-                await guild.create_role(name=role, hoist=False, mentionable=True)
-            except discord.errors.HTTPException:
-                pass
-    for role in new_region_raid_roles:
         temp_role = discord.utils.get(guild.roles, name=role)
         if not temp_role:
             try:
