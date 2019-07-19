@@ -19,7 +19,6 @@ data/kyogre.log
 data/serverdict_converter.py
 data/serverdictjson
 data/serverdictjson_backup
-data/title_data.json
 logs/dobby.log
 logs/dobby.log
 *.log
