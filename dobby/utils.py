@@ -191,7 +191,7 @@ async def ask_list(bot, prompt, destination, choices_list, options_emoji_list=No
     cancel_emoji = '❌'
     num_pages = (len(choices_list) - 1) // len(options_emoji_list)    
     for offset in range(num_pages + 1):
-        list_embed = discord.Embed(colour=destination.guild.me.colour)
+        list_embed = discord.Embed(colour=discord.Colour.lighter_grey())
         other_options = []
         emojified_options = []
         current_start = offset * len(options_emoji_list)
@@ -328,3 +328,18 @@ def do_template(message, author, guild):
     template_pattern = '(?i){(@|#|&|<)([^{}]+)}|{(user|server)}|<*:([a-zA-Z0-9]+):[0-9]*>*'
     msg = re.sub(template_pattern, template_replace, message)
     return (msg, not_found)
+
+async def letter_case(iterable, find, *, limits=None):
+    servercase_list = []
+    lowercase_list = []
+    for item in iterable:
+        if not item.name:
+            continue
+        elif item.name and (not limits or item.name.lower() in limits):
+            servercase_list.append(item.name)
+            lowercase_list.append(item.name.lower())
+    if find.lower() in lowercase_list:
+        index = lowercase_list.index(find.lower())
+        return servercase_list[index]
+    else:
+        return None

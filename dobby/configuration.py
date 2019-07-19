@@ -218,7 +218,7 @@ async def _configure_welcome(ctx, Dobby):
                     if not channel:
                         item = re.sub('[^a-zA-Z0-9 _\\-]+', '', item)
                         item = item.replace(" ","-")
-                        name = await letter_case(guild.text_channels, item.lower())
+                        name = await utils.letter_case(guild.text_channels, item.lower())
                         channel = discord.utils.get(guild.text_channels, name=name)
                     if channel:
                         guild_channel_list = []
@@ -297,7 +297,7 @@ async def _configure_regions(ctx, Dobby):
                 await owner.send(embed=discord.Embed(colour=discord.Colour.orange(), description="The number of locations doesn't match the number of regions you gave me earlier!\n\nI'll show you the two lists to compare:\n\n{region_names_list}\n{region_locations_list}\n\nPlease double check that your locations match up with your provided region names and resend your response.".format(region_names_list=', '.join(region_names_list), region_locations_list=', '.join(region_locations_list))))
                 continue
         await owner.send(embed=discord.Embed(colour=discord.Colour.green(), description='Region locations are set'))
-        await owner.send(embed=discord.Embed(colour=discord.Colour.lighter_grey(), description='Lastly, I need to know what channels should be flagged to allow users to modify their region assignments. Please enter the channels to be used for this as a comma-separated list. \n\nExample: `general, region-assignment`\n\nNote that this answer does *not* directly correspond to the previously entered channels/regions.\n\n').set_author(name='Region Command Channels', icon_url=Dobby.user.avatar_url))
+        await owner.send(embed=discord.Embed(colour=discord.Colour.lighter_grey(), description='Next, I need to know what channels should be flagged to allow users to modify their region assignments. Please enter the channels to be used for this as a comma-separated list. \n\nExample: `general, region-assignment`\n\nNote that this answer does *not* directly correspond to the previously entered channels/regions.\n\n').set_author(name='Region Command Channels', icon_url=Dobby.user.avatar_url))
         while True:
             locations = await Dobby.wait_for('message', check=(lambda message: (message.guild == None) and message.author == owner))
             response = locations.content.strip().lower()
@@ -318,7 +318,7 @@ async def _configure_regions(ctx, Dobby):
                 if not channel:
                     item = re.sub('[^a-zA-Z0-9 _\\-]+', '', item)
                     item = item.replace(" ","-")
-                    name = await letter_case(guild.text_channels, item.lower())
+                    name = await utils.letter_case(guild.text_channels, item.lower())
                     channel = discord.utils.get(guild.text_channels, name=name)
                 if channel:
                     channel_objs.append(channel)
@@ -342,6 +342,53 @@ async def _configure_regions(ctx, Dobby):
                 break
             else:
                 await owner.send(embed=discord.Embed(colour=discord.Colour.orange(), description="The channel list you provided doesn't match with your servers channels.\n\nThe following aren't in your server: **{invalid_channels}**\n\nPlease double check your channel list and resend your reponse.".format(invalid_channels=', '.join(channel_errors))))
+                continue
+        await owner.send(embed=discord.Embed(colour=discord.Colour.green(), description='Region command channels are set'))
+        await owner.send(embed=discord.Embed(colour=discord.Colour.lighter_grey(), description='Lastly, I need to know what channel to send region join notification messages in').set_author(name='Region Notify Channel', icon_url=Dobby.user.avatar_url))
+        while True:
+            locations = await Dobby.wait_for('message', check=(lambda message: (message.guild == None) and message.author == owner))
+            response = locations.content.strip().lower()
+            if response == 'cancel':
+                await owner.send(embed=discord.Embed(colour=discord.Colour.red(), description='**CONFIG CANCELLED!**\n\nNo changes have been made.'))
+                return None
+            channel_list = [c.strip() for c in response.split(',')]
+            guild_channel_list = []
+            for channel in guild.text_channels:
+                guild_channel_list.append(channel.id)
+            channel_objs = []
+            channel_names = []
+            channel_errors = []
+            item = channel_list[0]
+            channel = None
+            if item.isdigit():
+                channel = discord.utils.get(guild.text_channels, id=int(item))
+            if not channel:
+                item = re.sub('[^a-zA-Z0-9 _\\-]+', '', item)
+                item = item.replace(" ","-")
+                name = await utils.letter_case(guild.text_channels, item.lower())
+                channel = discord.utils.get(guild.text_channels, name=name)
+            if channel:
+                channel_objs.append(channel)
+                channel_names.append(channel.name)
+            else:
+                channel_errors.append(item)
+            channel_list = [x.id for x in channel_objs]
+            diff = set(channel_list) - set(guild_channel_list)
+            if (not diff) and (not channel_errors):
+                await owner.send(embed=discord.Embed(colour=discord.Colour.green(), description='Region Notify Channel enabled'))
+                for channel in channel_objs:
+                    ow = channel.overwrites_for(Dobby.user)
+                    ow.send_messages = True
+                    ow.read_messages = True
+                    ow.manage_roles = True
+                    try:
+                        await channel.set_permissions(Dobby.user, overwrite=ow)
+                    except (discord.errors.Forbidden, discord.errors.HTTPException, discord.errors.InvalidArgument):
+                        await owner.send(embed=discord.Embed(colour=discord.Colour.orange(), description='I couldn\'t set my own permissions in this channel. Please ensure I have the correct permissions in {channel} using **{prefix}get perms**.'.format(prefix=ctx.prefix, channel=channel.mention)))
+                config_dict_temp['regions']['notify_channel'] = channel_list[0]
+                break
+            else:
+                await owner.send(embed=discord.Embed(colour=discord.Colour.orange(), description="The channel you provided was not found in your channel list.\n\nPlease double check your channel name or id and resend your reponse.".format(invalid_channels=', '.join(channel_errors))))
                 continue
     # set up roles
     new_region_roles = set([r['role'] for r in region_dict.values()])
@@ -472,7 +519,7 @@ async def _configure_settings(ctx, Dobby):
                     if not channel:
                         item = re.sub('[^a-zA-Z0-9 _\\-]+', '', item)
                         item = item.replace(" ","-")
-                        name = await letter_case(guild.text_channels, item.lower())
+                        name = await utils.letter_case(guild.text_channels, item.lower())
                         channel = discord.utils.get(guild.text_channels, name=name)
                     if channel:
                         adminchannel_objs.append(channel)

@@ -97,7 +97,7 @@ load_config()
 
 Dobby.config = config
 
-default_exts = ['utilities', 'locationmatching']
+default_exts = ['utilities', 'locationmatching', 'eventcommands']
 
 for ext in default_exts:
     try:
@@ -236,21 +236,6 @@ async def prompt_match_result(channel, author_id, target, result_list):
         match = perfect_scores[0]
     return match
 
-async def letter_case(iterable, find, *, limits=None):
-    servercase_list = []
-    lowercase_list = []
-    for item in iterable:
-        if not item.name:
-            continue
-        elif item.name and (not limits or item.name.lower() in limits):
-            servercase_list.append(item.name)
-            lowercase_list.append(item.name.lower())
-    if find.lower() in lowercase_list:
-        index = lowercase_list.index(find.lower())
-        return servercase_list[index]
-    else:
-        return None
-
 async def _print(owner, message):
     if 'launcher' in sys.argv[1:]:
         if 'debug' not in sys.argv[1:]:
@@ -383,6 +368,35 @@ async def on_member_join(member):
             await send_to.send(welcomemessage.format(server=guild.name, user=member.mention))
     else:
         return
+
+@Dobby.event
+async def on_member_update(before, after):
+    # don't think this is needed right now.
+    return
+    guild = after.guild
+    region_dict = guild_dict[guild.id]['configure_dict'].get('regions',None)
+    if region_dict:
+        notify_channel = region_dict.get('notify_channel',None)
+        if (not before.bot) and notify_channel is not None:
+            prev_roles = set([r.name for r in before.roles])
+            post_roles = set([r.name for r in after.roles])
+            added_roles = post_roles-prev_roles
+            removed_roles = prev_roles-post_roles
+            regioninfo_dict = region_dict.get('info',None)
+            if regioninfo_dict:
+                notify = None
+                if len(added_roles) > 0:
+                    # a single member update event should only ever have 1 role change
+                    role = list(added_roles)[0]
+                    notify = await Dobby.get_channel(notify_channel).send(f"{after.mention} you have joined the {role.capitalize()} region.")
+                if len(removed_roles) > 0:
+                    # a single member update event should only ever have 1 role change
+                    role = list(removed_roles)[0]
+                    notify = await Dobby.get_channel(notify_channel).send(f"{after.mention} you have left the {role.capitalize()} region.")
+                    
+                if notify:
+                    await asyncio.sleep(8)
+                    await notify.delete()
 
 @Dobby.event
 async def on_message(message):
@@ -588,6 +602,61 @@ async def prefix(ctx, prefix=None):
 def _set_prefix(bot, guild, prefix):
     bot.guild_dict[guild.id]['configure_dict']['settings']['prefix'] = prefix
 
+@_set.command()
+async def profile(ctx):
+    guild = ctx.message.guild
+    author = ctx.message.author
+    profile={
+        "name":"",
+        "level": "",
+        "titles": []
+             }
+    name = await profile_step("What is your Wizard name?", ctx)
+    if name != "SKIPPED":
+        profile["name"] = name
+    level = await profile_step("What is your current level?", ctx)
+    if level != "SKIPPED":
+        profile["level"] = level
+
+    match = ''
+    result = TitleTable.select(TitleTable.name)
+    result = result.objects(Title)
+    results = [o for o in result]
+    titles = [r.name for r in results]
+    prompt = "Choose a title (You can choose 3 total)" 
+    while len(profile["titles"]) < 3:
+        match = await utils.ask_list(Dobby, prompt, author, titles, user_list=[author.id])
+        if match is None:
+            break
+        else:
+            profile["titles"].append(match)
+
+    with DobbyDB._db.atomic():
+        wizard, __  = WizardTable.get_or_create(snowflake=author.id, guild=guild.id)
+        wizardprofile, __  = ProfileTable.get_or_create(wizard_id=wizard)
+        wizardprofile.wizardname = profile["name"]
+        wizardprofile.level = profile["level"]
+        wizardprofile.title_one = profile["titles"][0] if len(profile["titles"]) > 0 else ""
+        wizardprofile.title_two = profile["titles"][1] if len(profile["titles"]) > 1 else ""
+        wizardprofile.title_three = profile["titles"][2] if len(profile["titles"]) > 2 else ""
+        wizardprofile.save()
+    await author.send("Profile Updated Successfully!")
+
+async def profile_step(text, ctx):
+    guild = ctx.message.guild
+    message = ctx.message
+    author = message.author
+    queryembed = discord.Embed(colour=discord.Colour.purple(), description=text)
+    queryembed.set_footer(text="Reply with **'skip'** to skip this profile item")
+    query = await author.send(embed=queryembed)
+    response = await Dobby.wait_for('message', timeout=180, check=(lambda reply: reply.author == message.author))
+    if response != None:
+        if response.content.lower() == "skip":
+            return "SKIPPED"
+        else:
+            return response.content
+        await response.delete()
+
 @Dobby.group(name='get', case_insensitive=True)
 @commands.has_permissions(manage_guild=True)
 async def _get(ctx):
@@ -786,7 +855,7 @@ async def announce(ctx, *, announce=None):
             recipients = {
 
             }
-            embeddraft.set_footer(text=_('For support, contact us on our Discord server. Invite Code: hhVjAN8'))
+            embeddraft.set_footer(text='For support, contact us on our Discord server. Invite Code: hhVjAN8')
             embeddraft.colour = discord.Colour.lighter_grey()
             for guild in Dobby.guilds:
                 recipients[guild.name] = guild.owner
@@ -1245,6 +1314,8 @@ async def profile(ctx, user: discord.Member = None):
     Usage:!profile [user]"""
     if not user:
         user = ctx.message.author
+    wizard, __  = WizardTable.get_or_create(snowflake=user.id, guild=ctx.guild.id)
+    wizardprofile, __  = ProfileTable.get_or_create(wizard_id=wizard)
     embed = discord.Embed(title=_("{user}\'s Wizard Profile").format(user=user.display_name), colour=user.colour)
     embed.set_thumbnail(url=user.avatar_url)
     await ctx.send(embed=embed)

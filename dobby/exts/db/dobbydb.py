@@ -1,3 +1,4 @@
+import io
 import json
 from peewee import Proxy, chunked
 from playhouse.apsw_ext import *
@@ -18,10 +19,13 @@ class DobbyDB:
         cls._db.initialize(handle)
         # ensure db matches current schema
         cls._db.create_tables([
-            LocationTable, HouseTable, GuildTable, 
-            WizardTable, RegionTable, LocationRegionRelation, 
+            GuildTable, WizardTable,
+            HouseTable, ProfessionTable,
+            ProfileTable, TitleTable,
+            LocationTable, RegionTable, 
+            LocationRegionRelation, LocationNoteTable,
             InnTable, GreenhouseTable, FortressTable,
-            WizardReportRelation, LocationNoteTable
+            WizardReportRelation, EventTable
         ])
         cls.init()
         cls._migrator = SqliteMigrator(cls._db)
@@ -37,6 +41,14 @@ class DobbyDB:
             HouseTable.get()
         except:
             HouseTable.reload_default()
+        try:
+            ProfessionTable.get()
+        except:
+            ProfessionTable.reload_default()
+        try:
+            TitleTable.get()
+        except:
+            TitleTable.reload_default()
         #check regions
         try:
             RegionTable.get()
@@ -69,6 +81,23 @@ class HouseTable(BaseModel):
         for name, emoji in house_data.items():
             cls.insert(name=name, emoji=emoji).execute()
 
+class ProfessionTable(BaseModel):
+    name = TextField(unique=True)
+    emoji=TextField()
+
+    @classmethod
+    def reload_default(cls):
+        if not DobbyDB._db:
+            return
+        try:
+            cls.delete().execute()
+        except:
+            pass
+        with open('config.json', 'r') as f:
+            profession_data = json.load(f)['profession_dict']
+        for name, emoji in profession_data.items():
+            cls.insert(name=name, emoji=emoji).execute()
+
 class GuildTable(BaseModel):
     snowflake = BigIntegerField(unique=True)
     config_dict = JSONField(null=True)
@@ -76,10 +105,39 @@ class GuildTable(BaseModel):
 class WizardTable(BaseModel):
     snowflake = BigIntegerField(index=True)
     house = ForeignKeyField(HouseTable, backref='wizards', null=True)
+    profession = ForeignKeyField(ProfessionTable, backref='wizards', null=True)
     guild = ForeignKeyField(GuildTable, field=GuildTable.snowflake, backref='wizards')
 
     class Meta:
         constraints = [SQL('UNIQUE(snowflake, guild_id)')]
+
+class TitleTable(BaseModel):
+    name = TextField()
+
+    @classmethod
+    def reload_default(cls):
+        if not DobbyDB._db:
+            return
+        try:
+            cls.delete().execute()
+        except:
+            pass
+        with io.open('data/title_data.json', mode="r", encoding="utf-8") as f:
+            title_data = json.load(f)
+        for title in title_data:
+            TitleTable.create(name=title['name'])
+
+class Title():
+    def __init__(self, name):
+        self.name = name
+
+class ProfileTable(BaseModel):
+    wizard = ForeignKeyField(WizardTable, backref='profiles', null=True)
+    wizardname = TextField(null=True)
+    level = TextField(null=True)
+    title_one = TextField(null=True)
+    title_two = TextField(null=True)
+    title_three = TextField(null=True)
 
 class RegionTable(BaseModel):
     name = TextField(index=True)
@@ -153,11 +211,11 @@ class LocationTable(BaseModel):
             cls.delete().execute()
         except:
             pass
-        with open('data/fortress_data.json', 'r') as f:
+        with io.open('data/fortress_data.json', mode="r", encoding="utf-8") as f:
             fortress_data = json.load(f)
-        with open('data/inn_data.json', 'r') as f:
+        with io.open('data/inn_data.json', mode="r", encoding="utf-8") as f:
             inn_data = json.load(f)
-        with open('data/greenhouse_data.json', 'r') as f:
+        with io.open('data/greenhouse_data.json', mode="r", encoding="utf-8") as f:
             greenhouse_data = json.load(f)
         for name, data in fortress_data.items():
             LocationTable.create_location(name, data, 'fortress')
@@ -188,3 +246,12 @@ class WizardReportRelation(BaseModel):
     created = DateTimeField(index=True,formats=["%Y-%m-%d %H:%M:%s"])
     wizard = BigIntegerField(index=True)
     location = ForeignKeyField(LocationTable, index=True)
+
+class EventTable(BaseModel):
+    guild = ForeignKeyField(GuildTable, field=GuildTable.snowflake, backref='events', index=True)
+    eventname = TextField(index=True)
+    active = BooleanField()
+    role = BigIntegerField(index=True)
+
+    class Meta:
+        constraints = [SQL('UNIQUE(guild_id, eventname)')]
