@@ -10,3 +10,16 @@ data/dobby.db-wal
 data/dobby.db-shm
 logs/dobby.log
 logs/dobby.log
+data/backup_old_kyogre.db
+data/kyogre - backup.db
+data/kyogre.db
+data/kyogre.db-shm
+data/kyogre.db-wal
+data/kyogre.log
+data/serverdict_converter.py
+data/serverdictjson
+data/serverdictjson_backup
+data/title_data.json
+logs/dobby.log
+logs/dobby.log
+*.log
