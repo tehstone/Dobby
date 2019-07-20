@@ -17,7 +17,12 @@ class EventCommands(commands.Cog):
 
     @commands.command(name='checkin', aliases=['ch', 'ci'], case_insensitive=True)
     @commands.has_permissions(manage_roles=True)
-    async def _checkin(self, ctx, member: discord.Member):
+    async def _checkin(self, ctx, *, member):
+        converter = commands.MemberConverter()
+        try:
+            member = await converter.convert(ctx, member)
+        except:
+            member = None
         result = (EventTable.select(EventTable.role)
                             .where((EventTable.active == True) &
                                    (EventTable.guild_id == member.guild.id)))
