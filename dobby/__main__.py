@@ -57,6 +57,10 @@ Dobby = DobbyBot(
     command_prefix=_get_prefix, case_insensitive=True,
     activity=discord.Game(name="Wizards Unite"))
 
+Dobby.success_react = '✅'
+Dobby.failed_react = '❌'
+Dobby.empty_str = '\u200b'
+
 custom_error_handling(Dobby, logger)
 
 def _load_data(bot):
@@ -97,7 +101,7 @@ load_config()
 
 Dobby.config = config
 
-default_exts = ['utilities', 'locationmatching', 'eventcommands']
+default_exts = ['utilities', 'locationmatching', 'eventcommands', 'badges']
 
 for ext in default_exts:
     try:

@@ -25,7 +25,8 @@ class DobbyDB:
             LocationTable, RegionTable, 
             LocationRegionRelation, LocationNoteTable,
             InnTable, GreenhouseTable, FortressTable,
-            WizardReportRelation, EventTable
+            WizardReportRelation, EventTable,
+            BadgeTable, BadgeAssignmentTable
         ])
         cls.init()
         cls._migrator = SqliteMigrator(cls._db)
@@ -255,3 +256,19 @@ class EventTable(BaseModel):
 
     class Meta:
         constraints = [SQL('UNIQUE(guild_id, eventname)')]
+
+class BadgeTable(BaseModel):
+    name = TextField(index=True)
+    description = TextField()
+    emoji = BigIntegerField(index=True)
+    active = BooleanField()
+
+    class Meta:
+        constraints = [SQL('UNIQUE(name, description, emoji)')]
+
+class BadgeAssignmentTable(BaseModel):
+    wizard = BigIntegerField(index=True)
+    badge = ForeignKeyField(BadgeTable, field=BadgeTable.id, backref='badgeassignment', index=True)
+
+    class Meta:
+        constraints = [SQL('UNIQUE(wizard, badge_id)')]
