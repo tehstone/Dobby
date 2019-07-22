@@ -95,7 +95,7 @@ class Badges(commands.Cog):
                                     BadgeTable.active).where(BadgeTable.id == badge_id))
         badge = result[0]
         send_emoji = self.bot.get_emoji(badge.emoji)
-        title = f"${badge.id} {badge.name}"
+        title = f"(*#{badge.id}*) {badge.name}"
         message = f"{send_emoji} {badge.description}"
         if badge.active:
             footer = "This badge is currently available."
@@ -166,11 +166,13 @@ class Badges(commands.Cog):
                     except:
                         errored.append(wizard.id)
                 with DobbyDB._db.atomic():
-                    BadgeAssignmentTable.insert_many(wizard_ids,
+                    count = BadgeAssignmentTable.insert_many(wizard_ids,
                                                      fields=[BadgeAssignmentTable.badge_id,
-                                                             BadgeAssignmentTable.wizard]).execute()
+                                                             BadgeAssignmentTable.wizard])\
+                            .on_conflict_ignore().execute()
                 message = f"Could not assign the badge to: {', '.join(errored)}"
-            except:
+            except Exception as e:
+                self.bot.logger.error(e)
                 await ctx.message.add_reaction(self.bot.failed_react)
                 return await ctx.channel.send(embed=discord.Embed(colour=discord.Colour.red(),
                                                            description="Completely failed"), delete_after=12)
@@ -180,7 +182,7 @@ class Badges(commands.Cog):
                 await ctx.message.add_reaction(self.bot.success_react)
                 return await ctx.channel.send(embed=discord.Embed(colour=colour, description=message), delete_after=12)
             colour = discord.Colour.green()
-            message = "Successfully granted badge."
+            message = f"Successfully granted badge to {count} wizards."
             await ctx.message.add_reaction(self.bot.success_react)
             return await ctx.channel.send(embed=discord.Embed(colour=colour, description=message))
 

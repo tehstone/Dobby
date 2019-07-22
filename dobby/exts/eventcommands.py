@@ -149,6 +149,43 @@ class EventCommands(commands.Cog):
         await ctx.message.add_reaction(reaction)
         response = await ctx.send(embed=discord.Embed(colour=colour, description=message), delete_after=10)
 
+    @_event.command(name='list', aliases=['li', 'l'], case_insensitive=True)
+    @commands.has_permissions(manage_roles=True)
+    async def _list(self, ctx, all_events=None):
+        """**Usage**: `!event list/li/l ['all']`
+        Lists only the active event by default, will list all events if 'all' is included."""
+        result = (EventTable
+                  .select(EventTable.id,
+                          EventTable.eventname,
+                          EventTable.active,
+                          EventTable.role)
+                  .join(GuildTable, on=(EventTable.guild_id == GuildTable.snowflake))
+                  .where(GuildTable.snowflake == ctx.guild.id))
+        if all_events is None or all_events.lower() != "all":
+            result = result.where(EventTable.active)
+            active_str = "Active"
+        else:
+            active_str = "All"
+        if len(result) == 0:
+            await ctx.message.add_reaction(self.failed_react)
+            return await ctx.send(f"No {active_str} events found.")
+        event_embed = embed = discord.Embed(colour=discord.Colour.purple(), description=f"{active_str} Events.")
+        for event in result:
+            try:
+                event_role = ctx.guild.get_role(event.role)
+            except:
+                event_role = None
+            if event_role:
+                value = f"**{event_role.name}** will be assigned to all trainers who check-in to this event."
+            else:
+                value = "No role associated with this event."
+            name = f"(*#{event.id}*) **{event.eventname}**"
+            if event.active:
+                name += " - *Active*"
+            embed.add_field(name=name, value=value, inline=False)
+        await ctx.message.add_reaction(self.success_react)
+        return await ctx.send(embed=event_embed)
+
     async def _validate_role(self, ctx, role_id):
         try:
             role_id = int(role_id)

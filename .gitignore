@@ -22,3 +22,6 @@ data/serverdictjson_backup
 logs/dobby.log
 logs/dobby.log
 *.log
+logs/dobby.log.1
+logs/dobby.log
+logs/dobby.log
